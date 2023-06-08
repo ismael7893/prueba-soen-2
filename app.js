@@ -3,6 +3,11 @@ const GI = {
 	createElement (tag, atributes) {
 		let element = document.createElement(tag)
         element.textContent = atributes
+
+        let input = document.createElement('input')
+        input.type = 'checkbox'
+        element.appendChild(input)
+
 		return element
 	}
 };
