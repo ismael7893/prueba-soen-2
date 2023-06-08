@@ -1,10 +1,11 @@
 'use strict'
 const GI = {
 	createElement (tag, atributes) {
-		let element = document
-		return document.createElement(tag)
+		let element = document.createElement(tag)
+        element.textContent = atributes
+		return element
 	}
-}
+};
 
 
 const to_do = [
@@ -13,5 +14,11 @@ const to_do = [
     'Pagar taxes',
     'Pasear a perro',
     'Comprar entradas para el cine',
-]
+];
 
+let ul = document.getElementsByTagName('ul')[0];
+
+for (let i = 0; i < to_do.length; i++) {
+    let elem = GI.createElement('li', to_do[i])
+    ul.appendChild(elem)
+}
